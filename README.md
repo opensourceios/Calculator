@@ -44,3 +44,57 @@ switch operation
   e. Finally, the result of the operation is added to the operandStack by calling pushOperand() once again.
     
    <i> This way, the result of the operation is stored and can be used to perform other operations</i>
+   
+
+<h2> Method Description </h2>
+
+A basic description of some of the methods used
+
+- <strong>PushOperand():</strong>
+
+Adds entered number to operandStack
+
+````
+func pushOperand (operand:Double)
+    {
+        operandStack.addObject(NSNumber.numberWithDouble(operand))
+    }
+````
+
+- <strong> PopOperand() </strong>
+
+Returns the number to perform operation with
+
+````
+func popOperand () -> Double 
+    {
+        var operandObject:NSNumber = self.operandStack.firstObject as NSNumber
+        println(operandObject)
+        self.operandStack.removeObjectAtIndex(0)
+        var operandObjectString:NSString = operandObject.stringValue
+        return (operandObjectString.doubleValue)
+    }
+````
+
+- <strong> PerformOperation() </strong>
+
+Performs the operation
+
+````
+func performOperation (operation:NSString) -> Double
+    {
+        var result:Double = 0
+        switch operation
+        {
+            case "+": result = self.popOperand() + self.popOperand()
+            case "-": result = self.popOperand() - self.popOperand()
+            case "x": result = self.popOperand() * self.popOperand()
+            case "/": result = self.popOperand() / self.popOperand()
+            default: break
+        }
+        self.pushOperand(result)
+        println(result)
+        return result
+    }
+````
+
