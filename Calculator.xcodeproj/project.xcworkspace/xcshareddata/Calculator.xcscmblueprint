@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0B63162449A0CEAC22BB23E6FA414F62F8152E2B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0B63162449A0CEAC22BB23E6FA414F62F8152E2B" : 0,
+    "FE4192E41AE603EDB3B4C589F4B406D348D1D3DC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A5C468B3-AE18-434B-96A1-D24ABE06B393",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0B63162449A0CEAC22BB23E6FA414F62F8152E2B" : "Calculator",
+    "FE4192E41AE603EDB3B4C589F4B406D348D1D3DC" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Calculator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Calculator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mukeshthawani\/Calculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B63162449A0CEAC22BB23E6FA414F62F8152E2B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/priore\/SOAPEngine",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FE4192E41AE603EDB3B4C589F4B406D348D1D3DC"
+    }
+  ]
+}
