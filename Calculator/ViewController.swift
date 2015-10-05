@@ -9,11 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var resultLabel : UILabel
+    @IBOutlet var resultLabel : UILabel?
     
     var userEnteringNumber :Bool = true
     var operandStack: NSMutableArray = []  //array containing two numbers to equate
-    var operationSelected:NSString = ""
+    var operationSelected:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,15 @@ class ViewController: UIViewController {
 
     @IBAction func numberPressed(sender : AnyObject) {
         
-        var digit: NSString = (sender.currentTitle)
-        println(digit)
+        let digit: String = (sender.currentTitle)!!
+        print(digit)
         if(userEnteringNumber == true)
         {
-        self.resultLabel.text = self.resultLabel.text.stringByAppendingString(digit)
+        self.resultLabel!.text = self.resultLabel!.text!.stringByAppendingString(digit as String)
         }
         else
         {
-            self.resultLabel.text = digit
+            self.resultLabel!.text = digit as String
         }
     }
 
@@ -43,43 +43,43 @@ class ViewController: UIViewController {
         
         if(self.userEnteringNumber == true)
         {
-            var numberCurrentlyDisplayed:NSString = self.resultLabel.text
-            println(numberCurrentlyDisplayed)
-            operationSelected = (sender.currentTitle)
+            let numberCurrentlyDisplayed:NSString = self.resultLabel!.text!
+            print(numberCurrentlyDisplayed)
+            operationSelected = (sender.currentTitle)!!
             self.pushOperand(numberCurrentlyDisplayed.doubleValue)
-            self.resultLabel.text = ""
+            self.resultLabel!.text = ""
         }
     }
     
     @IBAction func equatePressed(sender : AnyObject) {
         
-        var numberShownBeforeEquate:NSString = self.resultLabel.text
-        println(numberShownBeforeEquate)
+        let numberShownBeforeEquate:NSString = self.resultLabel!.text!
+        print(numberShownBeforeEquate)
         self.pushOperand(numberShownBeforeEquate.doubleValue)
         self.userEnteringNumber = false
-        var result:Double = self.performOperation(operationSelected)
-        var resultNumber:NSNumber = result as NSNumber
-        println(resultNumber)
-        self.resultLabel.text = resultNumber.stringValue
+        let result:Double = self.performOperation(operationSelected)
+        let resultNumber:NSNumber = result as NSNumber
+        print(resultNumber)
+        self.resultLabel!.text = resultNumber.stringValue
     }
     
     @IBAction func clearScreen (sender :AnyObject)
     {
-        self.resultLabel.text = "0"
+        self.resultLabel!.text = "0"
         operandStack.removeAllObjects()
     }
     
     func pushOperand (operand:Double) //Add numbers to array
     {
-        operandStack.addObject(NSNumber.numberWithDouble(operand))
+        operandStack.addObject(NSNumber(double: operand))
     }
     
     func popOperand () -> Double //returns number to calculate with
     {
-        var operandObject:NSNumber = self.operandStack.firstObject as NSNumber
-        println(operandObject)
+        let operandObject:NSNumber = self.operandStack.firstObject as! NSNumber
+        print(operandObject)
         self.operandStack.removeObjectAtIndex(0)
-        var operandObjectString:NSString = operandObject.stringValue
+        let operandObjectString:NSString = operandObject.stringValue
         return (operandObjectString.doubleValue)
     }
     
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             default: break
         }
         self.pushOperand(result)
-        println(result)
+        print(result)
         return result
     }
 }
